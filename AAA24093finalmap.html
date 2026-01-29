@@ -80,11 +80,9 @@
             fetch('./hinanjo.geojson')
                 .then((res) => res.json())
                 .then((json) => {
-                //GeoJSONレイヤーを作成
                 const markers = L.geoJSON(json)
                         .bindPopup((layer) => layer.feature.properties.P29_004)
                         .addTo(map);
-                        //チェックボックス
                         LayerControl.addOverlay(markers, "避難所");
                 });
             
